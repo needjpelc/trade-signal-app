@@ -3,38 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Real-Time Trade & News Analysis</title>
-  <link rel="stylesheet" href="style.css">
+  <title>High-Probability Signal Dashboard</title>
+  <style>
+    body {
+      background-color: #0b0f19;
+      color: #f1f5f9;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 15px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    h1 { color: #38bdf8; font-size: 1.8rem; margin-bottom: 5px; }
+    p { color: #94a3b8; margin-top: 0; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .box {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);
+    }
+    .box h3 {
+      margin-top: 0;
+      color: #f3f4f6;
+      font-size: 1.1rem;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 8px;
+    }
+    .rule-card {
+      background: #0f172a;
+      border-left: 4px solid #38bdf8;
+      padding: 10px 15px;
+      margin-top: 15px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>📊 Live Market & News Analyzer</h1>
-      <p>Real-Time Chart, Technical Analysis & Economic News</p>
+      <h1>🎯 High-Probability Trade Signal Dashboard</h1>
+      <p>Triple Confluence & Volatility Filter System</p>
     </header>
 
-    <!-- Technical Analysis Indicator -->
-    <div style="margin-bottom: 20px;">
-      <div class="tradingview-widget-container">
-        <div class="tradingview-widget-container__widget"></div>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
-        {
-          "interval": "1m",
-          "width": "100%",
-          "isTransparent": false,
-          "height": 450,
-          "symbol": "FX:EURUSD",
-          "showIntervalTabs": true,
-          "displayMode": "single",
-          "locale": "en",
-          "colorTheme": "dark"
-        }
-        </script>
+    <div class="grid">
+      <!-- 1. Multi-Timeframe Technical Gauge -->
+      <div class="box">
+        <h3>১. টেকনিক্যাল কনফার্মেশন (1 Min)</h3>
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+          {
+            "interval": "1m",
+            "width": "100%",
+            "isTransparent": true,
+            "height": 380,
+            "symbol": "FX:EURUSD",
+            "showIntervalTabs": true,
+            "displayMode": "single",
+            "locale": "en",
+            "colorTheme": "dark"
+          }
+          </script>
+        </div>
+      </div>
+
+      <!-- 2. Market Trend Gauge (5 Min) -->
+      <div class="box">
+        <h3>২. বড় ট্রেন্ড কনফার্মেশন (5 Min)</h3>
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+          {
+            "interval": "5m",
+            "width": "100%",
+            "isTransparent": true,
+            "height": 380,
+            "symbol": "FX:EURUSD",
+            "showIntervalTabs": false,
+            "displayMode": "single",
+            "locale": "en",
+            "colorTheme": "dark"
+          }
+          </script>
+        </div>
       </div>
     </div>
 
-    <!-- Live Candle Chart -->
-    <div style="margin-bottom: 20px;">
+    <!-- 3. Advanced Live Chart -->
+    <div class="box">
+      <h3>৩. লাইভ চার্ট ও ইন্ডিকেটর পর্যবেক্ষণ</h3>
       <div class="tradingview-widget-container" style="height:500px;width:100%">
         <div id="tradingview_chart" style="height:calc(100% - 32px);width:100%"></div>
         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
@@ -49,29 +121,19 @@
           "locale": "en",
           "toolbar_bg": "#f1f3f6",
           "enable_publishing": false,
-          "hide_side_toolbar": false,
+          "allow_symbol_change": true,
           "container_id": "tradingview_chart"
         });
         </script>
       </div>
     </div>
 
-    <!-- Market Timeline & News Widget -->
-    <div style="margin-top: 20px;">
-      <div class="tradingview-widget-container">
-        <div class="tradingview-widget-container__widget"></div>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
-        {
-          "feedMode": "all_symbols",
-          "colorTheme": "dark",
-          "isTransparent": false,
-          "displayMode": "regular",
-          "width": "100%",
-          "height": 500,
-          "locale": "en"
-        }
-        </script>
-      </div>
+    <!-- 4. Rule Card for High Accuracy -->
+    <div class="rule-card">
+      <strong>⚠️ উইনিং পার্সেন্টেজ বাড়ানোর ৩টি নিয়ম:</strong><br>
+      ১. <strong>Double Match Rule:</strong> "1 Min" এবং "5 Min" দুটো মিটারেই যখন একসাথে <strong>STRONG SELL</strong> বা <strong>STRONG BUY</strong> দেখাবে, কেবল তখনই ট্রেড নেবেন।<br>
+      ২. <strong>Neutral Skip:</strong> কোনো একটি মিটারে যদি <em>NEUTRAL</em> বা সাধারণ <em>BUY/SELL</em> থাকে, তবে ট্রেড এড়িয়ে চলবেন।<br>
+      ৩. <strong>News Rule:</strong> বড় কোনো অর্থনৈতিক খবর (যেমন US Inflation / Fed Rate) প্রকাশের ৫ মিনিট আগে বা পরে ট্রেড নেওয়া বন্ধ রাখবেন।
     </div>
 
   </div>
