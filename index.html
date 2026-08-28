@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trade Signal Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📊 Trade Probability Indicator</h1>
+      <p>Technical Analysis & Signal Dashboard</p>
+    </header>
 
+    <div class="card-grid">
+      <div class="card">
+        <h3>Current Signal</h3>
+        <div id="signal" class="status neutral">ANALYZING...</div>
+      </div>
+      <div class="card">
+        <h3>Up Probability</h3>
+        <div id="up-prob" class="stat">0%</div>
+      </div>
+      <div class="card">
+        <h3>RSI Value</h3>
+        <div id="rsi-val" class="stat">0</div>
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <canvas id="marketChart"></canvas>
+    </div>
+
+    <div class="actions">
+      <button onclick="calculateSignal()">🔄 Refresh Signal</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
